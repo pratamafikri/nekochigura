@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NekoChigura - Adoption</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- navigaton -->
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg" id="myNavbar">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">
+          <img src="img/logo.png" width="25" alt="" class="d-inline-block align-text-center" />
+          NekoChigura
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="offcanvas offcanvas-end bg-dark"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <a class="text-decoration-none fs-5 text-light fw-bold" href="index.html">
+              <img src="img/logo.png" width="25" alt="" class="d-inline-block align-text-center" />
+              NekoChigura
+            </a>
+            <button type="button" class="btn-close bg-danger" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link fw-bold" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-bold active" href="adopt.html">Adopt</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-bold" href="blogs.html">Blogs</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- navigation -->
+
+    <!-- banner -->
+    <section>
+      <div class="container">
+        <div class="d-flex justify-content-around align-items-center py-5">
+          <div class="d-flex flex-column">
+            <span class="fw-bold display-2">Adoption</span>
+            <span class="lead">Select your buddies</span>
+          </div>
+          <img src="img/pngwing.com.png" class="w-25 d-none d-md-block" alt="" />
+        </div>
+      </div>
+    </section>
+    <!-- banner -->
+
+    <!-- adoption panel -->
+    <section style="background-color: #d3d3d3">
+      <div class="container">
+        <div class="row py-5">
+          <div class="col">
+            <span class="d-block fw-bold fs-3">Filter</span>
+          </div>
+          <div class="col-12 col-lg-8">
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+              <a
+                href="!#"
+                class="text-decoration-none text-black"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal">
+                <div class="col">
+                  <div class="card h-100 bg-light">
+                    <div class="card-img-top" style="height: 400px">
+                      <img src="img/slide2.jpg" style="object-fit: cover; width: 100%; height: 100%" alt="..." />
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Sora</h5>
+                      <p class="card-text">Introverted. Always starring at the sky.</p>
+                    </div>
+                    <div class="card-footer">
+                      <span class="fs-6">Status: Available</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <a
+                href="!#"
+                class="text-decoration-none text-black"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                data-bs-whatever="Dudul">
+                <div class="col">
+                  <div class="card h-100 bg-light">
+                    <div class="card-img-top" style="height: 400px">
+                      <img src="img/slide3.jpg" style="object-fit: cover; width: 100%; height: 100%" alt="..." />
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Dudul</h5>
+                      <p class="card-text">An extraordinary cat, but she's always drowsy.</p>
+                    </div>
+                    <div class="card-footer">
+                      <span class="fs-6">Status: Available</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <a
+                href="!#"
+                class="text-decoration-none text-black"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal">
+                <div class="col">
+                  <div class="card h-100 bg-light">
+                    <div class="card-img-top" style="height: 400px">
+                      <img src="img/slide4.jpg" style="object-fit: cover; width: 100%; height: 100%" alt="..." />
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Tamako</h5>
+                      <p class="card-text">Sweet as your smile.</p>
+                    </div>
+                    <div class="card-footer">
+                      <span class="fs-6">Status: Available</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <a
+                href="!#"
+                class="text-decoration-none text-black"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal">
+                <div class="col">
+                  <div class="card h-100 bg-light">
+                    <div class="card-img-top" style="height: 400px">
+                      <img src="img/slide5.jpg" style="object-fit: cover; width: 100%; height: 100%" alt="..." />
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Momo</h5>
+                      <p class="card-text">Nya.. ichi nii san nya.. arigatoo</p>
+                    </div>
+                    <div class="card-footer">
+                      <span class="fs-6">Status: Available</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="d-flex gap-2 mt-4 float-end">
+              <!-- <button class="btn btn-light">Previous</button> -->
+              <button class="btn btn-light px-4">Next</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- adoption panel -->
+
+    <!-- adoption modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <!-- <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+          </div> -->
+          <div class="modal-body">
+            <div class="d-flex justify-content-end">
+              <button type="button" class="btn-danger btn mb-3" data-bs-dismiss="modal" aria-label="Close">
+                <i class="fa fa-times"></i>
+              </button>
+            </div>
+            <div class="row">
+              <div class="col-12 col-lg-6 mb-3">
+                <div id="product-carousel" class="carousel slide" data-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="img/slide1.jpg" alt="Image 1" class="d-block w-100" />
+                    </div>
+                    <div class="carousel-item">
+                      <img src="img/slide2.jpg" alt="Image 2" class="d-block w-100" />
+                    </div>
+                    <div class="carousel-item">
+                      <img src="img/slide3.jpg" alt="Image 3" class="d-block w-100" />
+                    </div>
+                  </div>
+                  <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#product-carousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#product-carousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <span class="fw-bold fs-3">About Momo</span>
+                <p class="lead">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi autem voluptatem qui repellendus
+                  doloremque veniam iste, molestiae sed perspiciatis dignissimos incidunt magni cum vero ex et modi
+                  aliquid soluta laudantium!
+                </p>
+                <div class="rounded shadow border">
+                  <div class="p-3">
+                    <div class="row">
+                      <div class="col-6">
+                        <span class="d-block fw-bold">Age</span>
+                        <span class="d-block mb-2">2 years old</span>
+                        <span class="d-block fw-bold">Gender</span>
+                        <span class="d-block">Female</span>
+                      </div>
+                      <div class="col-6">
+                        <span class="d-block fw-bold">Location</span>
+                        <span class="d-block mb-2">Bandung, West Java</span>
+                        <span class="d-block fw-bold">Adoption Status</span>
+                        <span class="d-block">Available</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="d-grid gap-2 my-4">
+                  <button class="btn btn-primary" type="button">Inquire about this cat</button>
+                  <button class="btn btn-secondary" type="button">Print adoption poster</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- adoption modal -->
+
+    <!-- footer -->
+    <footer class="bg-dark py-5 text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-sm-12 mb-3 mb-lg-0">
+            <div>
+              <span class="fw-bold display-5">NekoChigura</span>
+              <p>Loneliness is killing you from the inside.</p>
+            </div>
+            <span class="fs-5 fw-bold">Get In Touch:</span>
+            <ul class="list-inline mt-2">
+              <li class="list-inline-item">
+                <a href="#!" class=""><i class="fab fa-whatsapp text-white fa-2x"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#!" class=""><i class="fab fa-instagram text-white fa-2x"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#!" class=""><i class="fab fa-facebook-square text-white fa-2x"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-3 mb-lg-0">
+            <h4 class="fw-bold">Quicklinks</h4>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2">
+                <a href="index.html" class="text-decoration-none text-white">Home</a>
+              </li>
+              <li class="mb-2">
+                <a href="adopt.html" class="text-decoration-none text-white">Adopt</a>
+              </li>
+              <li class="mb-2">
+                <a href="blogs.html" class="text-decoration-none text-white">Blogs</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-6 mb-3 mb-lg-0">
+            <h4 class="fw-bold">Legals</h4>
+            <ul class="list-unstyled mb-0">
+              <li class="mb-2">
+                <a href="#!" class="text-decoration-none text-white">Terms and Service</a>
+              </li>
+              <li class="mb-2">
+                <a href="#!" class="text-decoration-none text-white">Privacy Policy</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <h4 class="fw-bold">Want to receive update from us?</h4>
+            <p>
+              If you interest in receiving news and information about our activities, don't hesitate to check our social
+              account or receive our mail by entering your email in the form below:
+            </p>
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Enter your email address here" />
+              <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- footer -->
+
+    <!-- copyright -->
+    <div class="d-flex justify-content-center align-items-center flex-column bg-secondary py-3">
+      <div style="font-size: 9pt" class="px-2 text-white">Copyright &copy; 2022</div>
+    </div>
+    <!-- copyright -->
+
+    <script>
+      const exampleModal = document.getElementById("exampleModal");
+      exampleModal.addEventListener("show.bs.modal", (event) => {
+        // Button that triggered the modal
+        const button = event.relatedTarget;
+        // Extract info from data-bs-* attributes
+        const recipient = button.getAttribute("data-bs-whatever");
+        // If necessary, you could initiate an AJAX request here
+        // and then do the updating in a callback.
+        //
+        // Update the modal's content.
+        const modalTitle = exampleModal.querySelector(".modal-title");
+        const modalBodyInput = exampleModal.querySelector(".modal-body input");
+
+        modalTitle.textContent = `New message to ${recipient}`;
+        modalBodyInput.value = recipient;
+      });
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
