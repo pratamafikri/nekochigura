@@ -21,6 +21,24 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+      #search-filters .nav-link{
+        color: #000000;
+      }
+
+      #search-filters .nav-link.active{
+        background-color: #C1C1C1!important;
+        color: #000000;
+      }
+
+      .img-card-adopt{
+        object-fit: cover; 
+        width: 100%; 
+        height: 100%; 
+        border-top-right-radius: 0.375rem; 
+        border-top-left-radius: 0.375rem;
+      }
+    </style>
   </head>
   <body>
     <!-- navigaton -->
@@ -86,92 +104,172 @@
     <section style="background-color: #d3d3d3">
       <div class="container">
         <div class="row py-5">
-          <div class="col">
-            <span class="d-block fw-bold fs-3">Filter</span>
+          <div class="col h-100 mb-4" id="search-filters">
+            <span class="d-block fw-bold fs-3">Refine your search</span>
+
+            <div class="d-flex flex-lg-column w-100 gap-1 d-none d-lg-block">
+              <div class="flex-fill">
+                <span class="d-block fw-bold fs-5 mb-1">Gender</span>
+                <nav class="nav nav-pills flex-column gap-1">
+                  <button class="flex-sm-fill nav-link text-start filter-gender rounded-0" id="gender1" onclick="setActive('gender', 1)">Male</button>
+                  <button class="flex-sm-fill nav-link text-start filter-gender rounded-0" id="gender2" onclick="setActive('gender', 2)">Female</button>
+                  <button class="flex-sm-fill nav-link text-start filter-gender rounded-0" id="gender3" onclick="setActive('gender', 3)">Neutered</button>
+                </nav>
+              </div>
+              <hr class="">
+              <div class="flex-fill">
+                <span class="d-block fw-bold fs-5 mb-1">Age</span>
+                <nav class="nav nav-pills flex-column gap-1">
+                  <button class="flex-sm-fill nav-link text-start filter-age rounded-0" id="age1" onclick="setActive('age', 1)">Kitten</button>
+                  <button class="flex-sm-fill nav-link text-start filter-age rounded-0" id="age2" onclick="setActive('age', 2)">Cat</button>
+                  <button class="flex-sm-fill nav-link text-start filter-age rounded-0" id="age3" onclick="setActive('age', 3)">Senior</button>
+                </nav>
+              </div>
+            </div>
+            
+            <div class="d-grid d-lg-none gap-2">
+              <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#filter-modal"><i class="fa fa-filter"></i> Filter</button>
+            </div>
           </div>
-          <div class="col-12 col-lg-8">
-            <div class="row row-cols-1 row-cols-md-2 g-4">
-              <a
-                href="!#"
-                class="text-decoration-none text-black"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal">
-                <div class="col">
-                  <div class="card h-100 bg-light">
-                    <div class="card-img-top" style="height: 400px">
-                      <img src="img/slide2.jpg" style="object-fit: cover; width: 100%; height: 100%" alt="..." />
-                    </div>
-                    <div class="card-body">
-                      <h5 class="card-title">Sora</h5>
-                      <p class="card-text">Introverted. Always starring at the sky.</p>
-                    </div>
-                    <div class="card-footer">
-                      <span class="fs-6">Status: Available</span>
-                    </div>
+          <div class="col-12 col-lg-9">
+            <div class="row row-cols-1 row-cols-md-4 g-2">
+              <div class="col cat-container" data-bs-toggle="modal" data-bs-target="#exampleModal" data-name="Sora" data-age="2 years" data-gender="Male" data-location="Bandung" data-status="Available">
+                <div class="card h-100 bg-light">
+                  <div class="card-img-top" style="height: 200px">
+                    <img src="img/slide2.jpg" class="img-card-adopt" alt="..." />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Sora</h5>
+                    <p class="card-text">Introverted. Always starring at the sky.</p>
                   </div>
                 </div>
-              </a>
-              <a
-                href="!#"
-                class="text-decoration-none text-black"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-                data-bs-whatever="Dudul">
-                <div class="col">
-                  <div class="card h-100 bg-light">
-                    <div class="card-img-top" style="height: 400px">
-                      <img src="img/slide3.jpg" style="object-fit: cover; width: 100%; height: 100%" alt="..." />
-                    </div>
-                    <div class="card-body">
-                      <h5 class="card-title">Dudul</h5>
-                      <p class="card-text">An extraordinary cat, but she's always drowsy.</p>
-                    </div>
-                    <div class="card-footer">
-                      <span class="fs-6">Status: Available</span>
-                    </div>
+              </div>
+              <div class="col cat-container" data-bs-toggle="modal" data-bs-target="#exampleModal" data-name="Dudul" data-age="1 years" data-gender="Female" data-location="Bali" data-status="Available">
+                <div class="card h-100 bg-light">
+                  <div class="card-img-top" style="height: 200px">
+                    <img src="img/slide3.jpg" class="img-card-adopt" alt="..." />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Dudul</h5>
+                    <p class="card-text">An extraordinary cat, but she's always drowsy.</p>
                   </div>
                 </div>
-              </a>
-              <a
-                href="!#"
-                class="text-decoration-none text-black"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal">
-                <div class="col">
-                  <div class="card h-100 bg-light">
-                    <div class="card-img-top" style="height: 400px">
-                      <img src="img/slide4.jpg" style="object-fit: cover; width: 100%; height: 100%" alt="..." />
-                    </div>
-                    <div class="card-body">
-                      <h5 class="card-title">Tamako</h5>
-                      <p class="card-text">Sweet as your smile.</p>
-                    </div>
-                    <div class="card-footer">
-                      <span class="fs-6">Status: Available</span>
-                    </div>
+              </div>
+              <div class="col cat-container" data-bs-toggle="modal" data-bs-target="#exampleModal" data-name="Tamako" data-age="1 years" data-gender="Female" data-location="Japan" data-status="Available">
+                <div class="card h-100 bg-light">
+                  <div class="card-img-top" style="height: 200px">
+                    <img src="img/slide4.jpg" class="img-card-adopt" alt="..." />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Tamako</h5>
+                    <p class="card-text">Sweet as your smile.</p>
                   </div>
                 </div>
-              </a>
-              <a
-                href="!#"
-                class="text-decoration-none text-black"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal">
-                <div class="col">
-                  <div class="card h-100 bg-light">
-                    <div class="card-img-top" style="height: 400px">
-                      <img src="img/slide5.jpg" style="object-fit: cover; width: 100%; height: 100%" alt="..." />
-                    </div>
-                    <div class="card-body">
-                      <h5 class="card-title">Momo</h5>
-                      <p class="card-text">Nya.. ichi nii san nya.. arigatoo</p>
-                    </div>
-                    <div class="card-footer">
-                      <span class="fs-6">Status: Available</span>
-                    </div>
+              </div>
+              <div class="col cat-container" data-bs-toggle="modal" data-bs-target="#exampleModal" data-name="Momo" data-age="2 years" data-gender="Female" data-location="Japan" data-status="Available">
+                <div class="card h-100 bg-light">
+                  <div class="card-img-top" style="height: 200px">
+                    <img src="img/slide5.jpg" class="img-card-adopt" alt="..." />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Momo</h5>
+                    <p class="card-text">Nya.. ichi nii san nya.. arigatoo</p>
                   </div>
                 </div>
-              </a>
+              </div>
+
+              
+              <div class="col cat-container" data-bs-toggle="modal" data-bs-target="#exampleModal" data-name="Tamako" data-age="1 years" data-gender="Female" data-location="Japan" data-status="Available">
+                <div class="card h-100 bg-light">
+                  <div class="card-img-top" style="height: 200px">
+                    <img src="img/slide4.jpg" class="img-card-adopt" alt="..." />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Tamako</h5>
+                    <p class="card-text">Sweet as your smile.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col cat-container" data-bs-toggle="modal" data-bs-target="#exampleModal" data-name="Momo" data-age="2 years" data-gender="Female" data-location="Japan" data-status="Available">
+                <div class="card h-100 bg-light">
+                  <div class="card-img-top" style="height: 200px">
+                    <img src="img/slide5.jpg" class="img-card-adopt" alt="..." />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Momo</h5>
+                    <p class="card-text">Nya.. ichi nii san nya.. arigatoo</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col cat-container" data-bs-toggle="modal" data-bs-target="#exampleModal" data-name="Dudul" data-age="1 years" data-gender="Female" data-location="Bali" data-status="Available">
+                <div class="card h-100 bg-light">
+                  <div class="card-img-top" style="height: 200px">
+                    <img src="img/slide3.jpg" class="img-card-adopt" alt="..." />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Dudul</h5>
+                    <p class="card-text">An extraordinary cat, but she's always drowsy.</p>
+                  </div>
+                </div>
+              </div>          
+              <div class="col cat-container" data-bs-toggle="modal" data-bs-target="#exampleModal" data-name="Sora" data-age="2 years" data-gender="Male" data-location="Bandung" data-status="Available">
+                <div class="card h-100 bg-light">
+                  <div class="card-img-top" style="height: 200px">
+                    <img src="img/slide2.jpg" class="img-card-adopt" alt="..." />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Sora</h5>
+                    <p class="card-text">Introverted. Always starring at the sky.</p>
+                  </div>
+                </div>
+              </div>
+              
+              
+              <div class="col cat-container" data-bs-toggle="modal" data-bs-target="#exampleModal" data-name="Momo" data-age="2 years" data-gender="Female" data-location="Japan" data-status="Available">
+                <div class="card h-100 bg-light">
+                  <div class="card-img-top" style="height: 200px">
+                    <img src="img/slide5.jpg" class="img-card-adopt" alt="..." />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Momo</h5>
+                    <p class="card-text">Nya.. ichi nii san nya.. arigatoo</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col cat-container" data-bs-toggle="modal" data-bs-target="#exampleModal" data-name="Tamako" data-age="1 years" data-gender="Female" data-location="Japan" data-status="Available">
+                <div class="card h-100 bg-light">
+                  <div class="card-img-top" style="height: 200px">
+                    <img src="img/slide4.jpg" class="img-card-adopt" alt="..." />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Tamako</h5>
+                    <p class="card-text">Sweet as your smile.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col cat-container" data-bs-toggle="modal" data-bs-target="#exampleModal" data-name="Sora" data-age="2 years" data-gender="Male" data-location="Bandung" data-status="Available">
+                <div class="card h-100 bg-light">
+                  <div class="card-img-top" style="height: 200px">
+                    <img src="img/slide2.jpg" class="img-card-adopt" alt="..." />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Sora</h5>
+                    <p class="card-text">Introverted. Always starring at the sky.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col cat-container" data-bs-toggle="modal" data-bs-target="#exampleModal" data-name="Dudul" data-age="1 years" data-gender="Female" data-location="Bali" data-status="Available">
+                <div class="card h-100 bg-light">
+                  <div class="card-img-top" style="height: 200px">
+                    <img src="img/slide3.jpg" class="img-card-adopt" alt="..." />
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">Dudul</h5>
+                    <p class="card-text">An extraordinary cat, but she's always drowsy.</p>
+                  </div>
+                </div>
+              </div>
+              
             </div>
 
             <div class="d-flex gap-2 mt-4 float-end">
@@ -230,7 +328,7 @@
                 </div>
               </div>
               <div class="col-12 col-lg-6">
-                <span class="fw-bold fs-3">About Momo</span>
+                <span class="fw-bold fs-3">About <span id="cat-name"></span></span>
                 <p class="lead">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi autem voluptatem qui repellendus
                   doloremque veniam iste, molestiae sed perspiciatis dignissimos incidunt magni cum vero ex et modi
@@ -241,15 +339,15 @@
                     <div class="row">
                       <div class="col-6">
                         <span class="d-block fw-bold">Age</span>
-                        <span class="d-block mb-2">2 years old</span>
+                        <span class="d-block mb-2"><span id="cat-age"></span> old</span>
                         <span class="d-block fw-bold">Gender</span>
-                        <span class="d-block">Female</span>
+                        <span class="d-block" id="cat-gender">Female</span>
                       </div>
                       <div class="col-6">
                         <span class="d-block fw-bold">Location</span>
-                        <span class="d-block mb-2">Bandung, West Java</span>
+                        <span class="d-block mb-2" id="cat-location">Bandung, West Java</span>
                         <span class="d-block fw-bold">Adoption Status</span>
-                        <span class="d-block">Available</span>
+                        <span class="d-block" id="cat-status">Available</span>
                       </div>
                     </div>
                   </div>
@@ -265,6 +363,43 @@
       </div>
     </div>
     <!-- adoption modal -->
+
+    <!-- filter modal -->
+    <!-- Modal -->
+    <div class="modal fade" id="filter-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Refine your search</h1>
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close"><i class="fa fa-times"></i></button>
+          </div>
+          <div class="modal-body">
+            <div class="flex-fill">
+              <span class="d-block fw-bold fs-5 mb-1">Gender</span>
+              <!-- <nav class="nav nav-pills flex-column gap-1">
+                <button class="flex-sm-fill nav-link text-start filter-gender rounded-0" id="gender1" onclick="setActive('gender', 1)">Male</button>
+                <button class="flex-sm-fill nav-link text-start filter-gender rounded-0" id="gender2" onclick="setActive('gender', 2)">Female</button>
+                <button class="flex-sm-fill nav-link text-start filter-gender rounded-0" id="gender3" onclick="setActive('gender', 3)">Neutered</button>
+              </nav> -->
+              <label for="" class="d-block"><input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" onclick="setActive('gender', 1)"> Male</label>
+              <label for="" class="d-block"><input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" onclick="setActive('gender', 2)"> Female</label>
+              <label for="" class="d-block"><input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" onclick="setActive('gender', 3)"> Neutered</label>
+            </div>
+            <hr class="">
+            <div class="flex-fill">
+              <span class="d-block fw-bold fs-5 mb-1">Age</span>
+              <label for="" class="d-block"><input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" onclick="setActive('age', 1)"> Kitten</label>
+              <label for="" class="d-block"><input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" onclick="setActive('age', 2)"> Cat</label>
+              <label for="" class="d-block"><input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" onclick="setActive('age', 3)"> Senior</label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Apply Filter</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- filter modal -->
 
     <!-- footer -->
     <footer class="bg-dark py-5 text-white">
@@ -338,20 +473,25 @@
     <script>
       const exampleModal = document.getElementById("exampleModal");
       exampleModal.addEventListener("show.bs.modal", (event) => {
-        // Button that triggered the modal
         const button = event.relatedTarget;
-        // Extract info from data-bs-* attributes
-        const recipient = button.getAttribute("data-bs-whatever");
-        // If necessary, you could initiate an AJAX request here
-        // and then do the updating in a callback.
-        //
-        // Update the modal's content.
-        const modalTitle = exampleModal.querySelector(".modal-title");
-        const modalBodyInput = exampleModal.querySelector(".modal-body input");
+        
+        const name = button.getAttribute("data-name");
+        const desc = button.getAttribute("data-desc");
+        const age = button.getAttribute("data-age");
+        const gender = button.getAttribute("data-gender");
+        const location = button.getAttribute("data-location");
+        const status = button.getAttribute("data-status");
 
-        modalTitle.textContent = `New message to ${recipient}`;
-        modalBodyInput.value = recipient;
+        document.getElementById("cat-name").textContent = name;
+        document.getElementById("cat-age").textContent = age;
+        document.getElementById("cat-gender").textContent = gender;
+        document.getElementById("cat-location").textContent = location;
+        document.getElementById("cat-status").textContent = status;
       });
+
+      function setActive(ids, index){
+        document.getElementById(ids+index).classList.toggle('active')      
+      }
     </script>
 
     <script
