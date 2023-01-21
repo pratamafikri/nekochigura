@@ -38,6 +38,13 @@
         border-top-right-radius: 0.375rem; 
         border-top-left-radius: 0.375rem;
       }
+
+      .galery-items {
+        object-fit: cover; height: 100%; width: 100%;
+      }
+      .galery-items:hover{
+        border: 3px solid #0D6EFD;
+      }
     </style>
   </head>
   <body>
@@ -286,9 +293,6 @@
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
-          <!-- <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
-          </div> -->
           <div class="modal-body">
             <div class="d-flex justify-content-end">
               <button type="button" class="btn-danger btn mb-3" data-bs-dismiss="modal" aria-label="Close">
@@ -297,34 +301,21 @@
             </div>
             <div class="row">
               <div class="col-12 col-lg-6 mb-3">
-                <div id="product-carousel" class="carousel slide" data-ride="carousel">
-                  <div class="carousel-inner">
-                    <div class="carousel-item active">
-                      <img src="img/slide1.jpg" alt="Image 1" class="d-block w-100" />
-                    </div>
-                    <div class="carousel-item">
-                      <img src="img/slide2.jpg" alt="Image 2" class="d-block w-100" />
-                    </div>
-                    <div class="carousel-item">
-                      <img src="img/slide3.jpg" alt="Image 3" class="d-block w-100" />
-                    </div>
+                <div class="row mb-3">
+                  <div class="col-12 d-flex">
+                    <img src="img/slide2.jpg" id="show-preview-img" style="object-fit: cover; width: 100%; height: 400px;" class="rounded" alt="">
                   </div>
-                  <button
-                    class="carousel-control-prev"
-                    type="button"
-                    data-bs-target="#product-carousel"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                  </button>
-                  <button
-                    class="carousel-control-next"
-                    type="button"
-                    data-bs-target="#product-carousel"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                  </button>
+                </div>
+                <div class="row">
+                  <div class="col-4 d-flex" onmouseover="changePict('img/slide3.jpg')">
+                    <img src="img/slide3.jpg" class="rounded galery-items" alt="">
+                  </div>
+                  <div class="col-4 d-flex" onmouseover="changePict('img/slide4.jpg')">
+                    <img src="img/slide4.jpg" class="rounded galery-items" alt="">
+                  </div>
+                  <div class="col-4 d-flex" onmouseover="changePict('img/slide5.jpg')">
+                    <img src="img/slide5.jpg" class="rounded galery-items" alt="">
+                  </div>
                 </div>
               </div>
               <div class="col-12 col-lg-6">
@@ -376,11 +367,6 @@
           <div class="modal-body">
             <div class="flex-fill">
               <span class="d-block fw-bold fs-5 mb-1">Gender</span>
-              <!-- <nav class="nav nav-pills flex-column gap-1">
-                <button class="flex-sm-fill nav-link text-start filter-gender rounded-0" id="gender1" onclick="setActive('gender', 1)">Male</button>
-                <button class="flex-sm-fill nav-link text-start filter-gender rounded-0" id="gender2" onclick="setActive('gender', 2)">Female</button>
-                <button class="flex-sm-fill nav-link text-start filter-gender rounded-0" id="gender3" onclick="setActive('gender', 3)">Neutered</button>
-              </nav> -->
               <label for="" class="d-block"><input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" onclick="setActive('gender', 1)"> Male</label>
               <label for="" class="d-block"><input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" onclick="setActive('gender', 2)"> Female</label>
               <label for="" class="d-block"><input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" onclick="setActive('gender', 3)"> Neutered</label>
@@ -491,6 +477,10 @@
 
       function setActive(ids, index){
         document.getElementById(ids+index).classList.toggle('active')      
+      }
+
+      function changePict(img){
+        document.getElementById('show-preview-img').src = img;
       }
     </script>
 
